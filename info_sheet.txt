@@ -1,0 +1,66 @@
+========================================
+CS/COE 1520 Assignment Information Sheet
+----------------------------------------
+
+You must submit an information sheet with every assignment. Also be sure
+to submit all materials following the procedures described on the
+submission procedures page.
+
+Name:  Erik Roeckel
+
+Lecture section: Monday, 5:30 - 8:15pm
+
+Recitation day and time: Friday, 4pm
+
+Assignment #: 3
+
+Program due date: 11/13/19
+
+Handed in date: 11/13/19
+
+Source code file name(s):
+
+static/chat.js
+static/style.js
+templates/base.html
+templates/chat.html
+templates/deleteChat.html
+templates/login.html
+templates/profile.html
+templates/register.html
+chat.py
+models.py
+
+
+
+Other file name(s) (if relevant):
+
+N/A
+
+
+
+Does your project run without error?: 
+
+Unfortunatley, no it doesn't.
+
+If not, what is/are the error(s) and which parts of your program run
+correctly?:
+
+Before I added the functionality for only displaying new messages to the user, posting new
+messages was working find in all cases. Yet after I added this functionality I am getting
+an error when I try to add a new message to a brand new chat (a chat with no previous messages). I 
+have spent the past 3 hours using the chrome debugger trying to figure out what is causing this
+and I just couldn't figure it out. Also, users can delete a chat room and all the corresponding
+messages but others users are not displayed a message when this happens. Other than these 2 issues
+everything else in my program is working.
+
+
+
+Additional comments to the grader:
+
+
+
+
+
+
+
