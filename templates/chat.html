@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %} {{chatName}} {% endblock %}
+
+{% block body %}
+<script type="text/javascript" src="{{ url_for('static', filename='chat.js') }}"></script>
+<h1>Welcome to {{chatName}} Chatroom</h1>
+<br></br>
+<h2><a href="{{ url_for('profile', username = g.user.username) }}"> Leave this chatroom</a></h2>
+<div class = "addMessage">
+        <form name = "Message" id = "messageForm">
+            <h3>New Message: </h3>
+            <input type="text" id="newMessage" name ="text" value="" size="60"/>
+            <input type="button" id="postMessage" value= "Post Message" />
+        </form>
+</div>
+<br></br>
+<div id = "messageBoard">
+{% if messages %}
+    <ul id= "messageList">
+        {% for message in messages %}
+            <li>
+                <p>{{ message.text }}</p>
+                <p><strong>From: </strong> {{ message.user.username }}</p>
+                <p><strong>Date posted: </strong>{{message.convertTimestamp()}}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <strong>There are no messages!</strong>
+{% endif %}
+</div>
+{% endblock %}

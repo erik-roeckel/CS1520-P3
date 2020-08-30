@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Chat{% endblock %}
+
+{% block body %} 
+    <h2>Delete Previously Created Chat</h2>
+    <div class = formFormat>
+        <h3>Chat</h3>
+        <p>{{chatName}}</p>
+        <form action="" method="POST">
+            <dl>
+            <dd><input type="submit" value="Delete Chat">
+            </dl>
+            <strong><a href="{{ url_for('profile', username = g.user.username) }}"> Go Back to Profile</strong>
+        </form>
+    </div>
+{% endblock %}

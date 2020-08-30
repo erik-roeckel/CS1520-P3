@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Your profile!{% endblock %}
+
+{% block body %} 
+<h1>{{g.user.username}} 's Profile</h1>
+<div class= "formatProfile">
+    <div id = "newChatroom">
+        <h1>Start a new Chatroom</h1>
+        <form action="" method="Post">
+            <dl>
+            <dt>Chat Room Name:
+            <dd><input type="text" name="chatName">
+            <dd><input type="submit" value="Create Chatroom">
+            </dl>
+        </form>
+    </div>
+    <br></br>
+    <div id = "joinChatroom">
+        <h1>Join an existing Chatroom</h1>
+        {% if chats %}
+            {%for chat in chats %}
+            <li>
+                <h3>Chat</h3>
+                {{chat}}
+                <br></br>
+                <strong><a href="{{ url_for('join_chat', username= g.user.username, chatName = chat.chat_name)}}"> Join this chatroom</a></strong>
+                <br></br>
+                {% if chat.creator_id == g.user.id %}
+                    <strong><a href="{{ url_for('delete_chat', chatName = chat.chat_name)}}"> Delete this chatroom</a></strong>
+                {% endif %}
+            </li>
+            {% endfor %}
+        {% else %}
+        <li>
+            <h3>There are currently no open chatrooms!</h3>
+        </li>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
